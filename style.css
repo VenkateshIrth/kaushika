@@ -1,0 +1,180 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  min-width: 600px;
+  /* !Change the background image(cake) */
+  background-image: url(./images/cake.png), url(./images/cake.png);
+  /* *If you want you can remove images and add a gradient color for background */
+  /* background-image: linear-gradient(120deg, #aaa7b0, #ff002b); */
+  background-color: #c88cfc;
+  background-position: left top, right top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  background-attachment: fixed;
+  overflow: hidden;
+  position: relative;
+}
+
+/* !You can customize wishing msg */
+#msgSet {
+  line-height: 1.4;
+  font-size: 106%;
+}
+
+/* !You can customize wishing msg h3 tags */
+#msgSet h3 {
+  margin: 0px 0;
+  font-family: cursive;
+  font-weight: normal;
+}
+
+/* *Play Button */
+#playButton {
+  z-index: 6;
+  color: #ffd4f7;
+  background: linear-gradient(to bottom, rgba(255, 0, 230, 0.627), rgb(255, 0, 106));
+}
+
+#playButton:hover {
+  cursor: pointer;
+  color: #d8ffd4;
+  background: green;
+}
+
+/* *Rectangle Layer */
+#bgImg {
+  width: 32.5%;
+  min-width: 250px;
+  height: 25%;
+  margin: auto;
+  padding: 10px;
+  border-radius: 25px;
+  z-index: 3;
+  backdrop-filter: blur(2px);
+}
+
+/* *Whole page(main div tag) */
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+/* *Main div tag of candles */
+#image-container {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* *Adjust the spacing between the candles */
+#image-container div {
+  margin: 0 10px;
+}
+
+/* !Instruction text */
+#birthday-message {
+  margin: 5px 0;
+  font-size: 24px;
+  color: #000000;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* *Volume display(only need for the debugging) */
+#volume-display {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* !Scale up the main photo on hover */
+#img-after:hover #photo {
+  transform: scale(1.1);
+  margin: 0px auto;
+  border-radius: 25px;
+}
+
+#img-after {
+  width: 270px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 25px;
+  margin: 0px auto;
+  box-shadow: 0 0 20px #ffffffb1;
+}
+
+/* !Main photo */
+#photo {
+  border-radius: 25px;
+  display: none;
+  width: 100%;
+  height: auto;
+  transition: opacity 1s ease;
+  transition: transform 0.5s ease;
+  margin: 0px auto;
+}
+
+/* !Separate controlling for candles */
+#candle1 {
+  display: block;
+}
+
+#candle2 {
+  display: none;
+}
+
+#candle3 {
+  display: none;
+}
+
+#candle4 {
+  display: none;
+}
+
+/* *Falling dots */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #6636c5;
+  border-radius: 50%;
+  animation: confetti-animation 3s infinite;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+/* *Falling dots animation */
+@keyframes confetti-animation {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  100% {
+    transform: translateY(600px) rotate(360deg);
+  }
+}
+
+.rotating-image {
+  position: absolute;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
